@@ -2,12 +2,12 @@
 
 ## Consulted ChatGPT for a short but difficult assignment. 
 
-* 3. Pathfinding Algorithm Implementation
- Implement a pathfinding algorithm, such as A* (A-star), which is widely used in games for navigating characters or objects through a game world.
- Key Features:
-    Grid-based Map: Create a simple map representation.
-    A Algorithm:* Implement the A* algorithm to find the shortest path between two points.
-    Visualization: Provide a visual representation of the pathfinding process.*
+*Pathfinding Algorithm Implementation*
+*Implement a pathfinding algorithm, such as A-star, which is widely used in games for navigating characters or objects through a game world.*
+*Key Features:* 
+    *Grid-based Map: Create a simple map representation.*
+    *A-star Algorithm: Implement the A-star algorithm to find the shortest path between two points.*
+    *Visualization: Provide a visual representation of the pathfinding process.*
 
 Status at beginning; I don't have C++ in Visual Studio installed, only gcc in VsCode. I can't remember when I last coded a full C++ program. I only heard of SDL today, it sounds more interesting to me personally than doing something with an engine such as Unity or Unreal.
 
