@@ -2,7 +2,7 @@
 
 ## Consulted ChatGPT for a short but difficult assignment. 
 
-*Pathfinding Algorithm Implementation*
+*Pathfinding Algorithm Implementation*</br>
 *Implement a pathfinding algorithm, such as A-star, which is widely used in games for navigating characters or objects through a game world.*
 *Key Features:* 
     *Grid-based Map: Create a simple map representation.*
