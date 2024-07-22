@@ -1,0 +1,65 @@
+I kept a journal throughout the demo, to calculate time and thoughts, afterwards see where my time was most spent. 
+
+-----
+
+11.7. 21.20 begin
+Consulted ChatGPT for a short but difficult assignment to prove my learning capabilities. 
+
+3. Pathfinding Algorithm Implementation
+Implement a pathfinding algorithm, such as A* (A-star), which is widely used in games for navigating characters or objects through a game world.
+Key Features:
+
+    Grid-based Map: Create a simple map representation.
+    A Algorithm:* Implement the A* algorithm to find the shortest path between two points.
+    Visualization: Provide a visual representation of the pathfinding process.
+
+Current status; I don't have C++ in Visual Studio installed, only gcc in VsCode. I only heard of SDL today, it sounds more interesting to me personally than doing something with an engine.
+
+Github project opened
+Finding out if VsCode is enough or do I really need Visual Studio. VsCode maybe possible but not feasible for SDL
+21.32 Found instructions to installing SDL2 tp Visual Studio 2022, https://www.youtube.com/watch?v=7nkKVyt0DsY downloading and installing C++. 
+------
+For further use, 
+in Project Properties select C/C++ > General > Additional Include Directories, add "include" folder inside SDL library
+in Linker > General > Additional Library Directories, add "x64" folder inside SDL library
+in Linker > Input > Additional dependencies > add .lib filenames, no need full path just "sdl2.lib" for example
+Go to the "x64" folder and find *.dll, copy and paste them to project folder, also to x64 > Debug
+This needs to be done for all parts of the SDL library, in this demo it's SDL2 (base), SDL_image and SDL_ttf
+The correct SDL2 version for Visual Studio 2022 is devel-VC
+---
+21.47 Finished reading instructions, obtained sample code to hopefully test succesful installation, still installing, taking a break
+22.07 back
+22.26 everythings installed and sample code runs without error. Next figure out A* and also the map. Is the map still a 2 dimensional array in 2024? If so what resolution?
+IDEAS: I might want to try to create my own logic of finding the shortest path, and a time comparison between A* and mine. I think I'd first go with brute force, whenever theres a branch, run all the options. It will take time for sure but the options seem very complex. However now I'm thinking maybe it will end up running in circles if possible on a circular part of the route. This might be very interesting to code, but it's also bit irrelevant since there is a ready made library. I'll try to leave it till the end
+22.34 TIL A* is actually an algorith, not a ready library, so this might be more interesting than just loading a library. Then again, shouldn't I use a library if there's one?
+22.42 https://www.geeksforgeeks.org/a-search-algorithm/ finished reading on A*, I understand the algorithm ~75%, I fail to understand how it can work if a dead-end at some point happens to be the most feasible route. There is a "open" list and "closed" list, I failed to see a portion where they start running the closed list route variants should we run out open list variants. If I had more time and this was a real project, I'd spend some time to actually understanding the algorithm 99%+. The map is indeed a 2 dimensional array, at least in this sample code.
+
+22.54 Asked ChatGPT to generate me a bigger map with minimum 3x3 rooms and corridors leading between the rooms, but it failed horribly. I have an old game where I have a RNG room builder but it's in TurboPascal. Oh well, I'll sort it later, could always do by hand.
+22.58 include bits/stdc++.h not working in VSCC, figuring out which includes I need
+23.05 sample code for a* "pair is not a template", typedef pair... --> typedef std:pair... fixed. Same for "stack". Never heard of stack command, reading up..
+23.09 Okay, it's a LIFO array with some helper functions. make_pair is also standard C++ command, reading up on pair.. Ok, it's weird how specific auxiliary functions there are in standard libraries. I guess it's better so. All std commands need the prefix it seems, reading up on the subject and why/why not using "using" keyword seems to be a bad thing. Back in the days i wrote cout, not std::cout that's for sure, but I can understand why the namespace is strict there.
+23.19 A* sample code runs without errors now. It needs some serious overhaul to be part of the project, but it will surely be shorter than starting from scratch. The code is well commented so it can be easily understood. Next up I think I want to print the map, need to get 2 bitmap tiles. Mouse to select starting point and end point, then some draw function to draw the lines it has traversed. Yeah this is gonna be fun, now break.
+23.45 back, before I move forward I need to figure out what the design and sectioning is going to look like. Spent 10 minutes reading what possibilities does the differentation of header files and implementation files offer, I failed to find anything I didn't know already. I just don't get why a proposed structure has the header files in a seperate directory from cpp files. Gotta read up on it at a later time.
+0.15 Desinging the structure with Google and ChatGPT as my friend. ChatGPT suggests every module should be of type object, with the constructors and all that, instead of plain functions. I guess it's the C++ way, I'm considering doing most if not all the modules that way; it'll be slower though because I only ever use OOP when it makes a lot of sense.
+0.24 Convinved that OOP is the way to go for this project, and most probably. Ending the day here, 2 to 2.5 hours
+
+18.27 back, start creating the gui/gfx object. Reading up on SDL2 mouse inputs, designing the objects functions, how to use header files in a proper manner
+19.22 still reading up, had a 15min break though. Singletons, global, trying to figure out if classing a gfx renderer is a good idea. It's not like there ever needs to be 2, but on the other hand classes do work nicely on their own and can be reused more efficiently.
+19.32 I'm fairly convinced I'll just go with a regular class, it seems that with SDL my worry about mistakenly creating multiple instances of the class is not a concern, and class seems to be a perfectly good structure for this part of program. Taking a break now.
+20.40 back, commencing programming
+21.19 class structure has been programmed, functions init, destroy, initSDL() and drawTestImage() are functional. Unsure how to handle errors, there's a possilibity for try catch error handling in C++ it seems, but for demo this size maybe not feasible.
+21.40 stuck reading on vectors, in reality a static array would be enough or maybe even better for this
+21.46 static array of textures implemented, changed the code to support this. PAUSE
+22.01 back
+22.13 created the texture tile files, load them up ok. Now it's time to stop again. 2h 15min, total 4h 30min
+11.59 back, changed all cout to printf for unified solution
+12.59 Added handleInput() for shutting down gracefully and later clicking the src and dest points, added loadMap(), added main loop to main.cpp, added gui.render(). Rendering tiles is now ok. What's depressing, while asking chatGpt to explain something, it created almost identical example code for me in 2 minutes. xD Break, 3-3.5 hours total
+--
+14.07 back, tweaking few details (screen resizing etc) then start working on astar.cpp
+14.35 created mouse click handler, now astar.  
+15.11 astar selecting beginPoint and endPoint from GUI, output to console working. I settled with building the logic inside handleInput() but it would be better if there was a return object inside handle input. For this demo it's fine but if I wanted this same code to be functional in more cases, it would have to be so that all logic is in the caller of handleInput(). Now installing TFT library so I can have the message on screen. (select begin point, end point, "path (not) found"), BREAK
+15.26 BACK 15 min break, now implement textbox
+16.28 Finished implementing text rendering with SDL2_ttf inside SDLGui::render(). Not entirely satisfied that I didn't create a seperate function for text rendering. It's only a few lines long, but still I'd like to play more with function returns here for code reusability etc. 
+Next up is getting a return object from astar function containing the path coords and handling it in gui to show the route, and for a detail maybe a flag at both points. Maybe change the message to "Route (not) found! Click to reset". Break! 5½ hours total 
+16.42 Back, making alterations to astar.cpp to support Path object return
+18.01 Got the lines rendered. 7½ hours total, going to stop here. Might add the flags later, but the demo is now functional, not polished.
