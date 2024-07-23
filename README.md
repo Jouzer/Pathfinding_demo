@@ -11,7 +11,7 @@
 
 Status at beginning; I only heard of SDL today, it sounds more interesting to me personally than doing something with an engine such as Unity or Unreal. I have created multiple ASCII grid based games/protos, and one of them had self-made "AI" the enemies trying to chase you, so the challenge is not totally foreign either
 
-Project active working time from design to completion 7½h. Demo is working, not polished. No prior experience working with A-star or SDL2.
+Project active working time from design to working 7½h. No prior experience working with A-star or SDL2.
 
 Instructions for installing SDL2 libraries in Visual Studio 2022 https://www.youtube.com/watch?v=7nkKVyt0DsY </br>
 A-star pathfinding algorithm code was readily available at https://www.geeksforgeeks.org/a-search-algorithm/ , necessary changes were mostly about returning an object instead of printing the route </br>
