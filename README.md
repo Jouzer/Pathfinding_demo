@@ -20,4 +20,4 @@ Sprites are opensource. Credit for sprites George Bailey
 https://opengameart.org/content/16x16-game-assets
 
 </br>
-![kuva](https://github.com/user-attachments/assets/d503f3ad-c1f4-435b-8d01-b087d731f9d5)
+<img src="https://github.com/user-attachments/assets/d503f3ad-c1f4-435b-8d01-b087d731f9d5"/>
