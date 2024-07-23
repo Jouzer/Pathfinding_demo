@@ -9,7 +9,7 @@
     *A-star Algorithm: Implement the A-star algorithm to find the shortest path between two points.*</br>
     *Visualization: Provide a visual representation of the pathfinding process.*</br>
 
-Status at beginning; I don't have C++ in Visual Studio installed, only gcc in VsCode. I can't remember when I last coded a full C++ program. I only heard of SDL today, it sounds more interesting to me personally than doing something with an engine such as Unity or Unreal.
+Status at beginning; I don't have C++ in Visual Studio installed, only gcc in VsCode. I only heard of SDL today, it sounds more interesting to me personally than doing something with an engine such as Unity or Unreal.
 
 Project active working time from design to completion 7½h. Demo is working, not polished. No prior experience working with A-star or SDL2.
 
